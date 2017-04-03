@@ -60,6 +60,12 @@ def read_input(port):
     return GPIO.input(port)
 
 
+def init_pwm(port, frequency):
+    """Create a PWM instance."""
+    import RPi.GPIO as GPIO
+    return GPIO.PWM(port, frequency)
+
+
 def edge_detect(port, event_callback, bounce):
     """Add detection for RISING and FALLING events."""
     import RPi.GPIO as GPIO
